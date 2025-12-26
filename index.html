@@ -8,39 +8,96 @@
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
       <div class="container">
-        <div class="logo">FitZone</div>
+        <div class="logo">
+          <span class="logo-icon">💪</span>
+          <span class="logo-text">FitZone</span>
+        </div>
         <ul class="nav-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="nav-actions">
+          <a href="#contact" class="btn-nav-cta">Join Now</a>
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-      <div class="hero-content">
-        <h1>Transform Your Body, Transform Your Life</h1>
-        <p>
-          Join FitZone Gym today and start your fitness journey with
-          state-of-the-art equipment and expert trainers.
-        </p>
-        <div class="hero-buttons">
-          <a href="#contact" class="btn btn-primary">Get Started</a>
-          <a href="#about" class="btn btn-secondary">Learn More</a>
-        </div>
+      <div class="hero-background">
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-shape hero-shape-3"></div>
       </div>
-      <div class="hero-image">
-        <div class="hero-placeholder"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span>🏆 #1 Fitness Center</span>
+            </div>
+            <h1>
+              <span class="hero-title-line">Transform Your Body,</span>
+              <span class="hero-title-line highlight">Transform Your Life</span>
+            </h1>
+            <p class="hero-description">
+              Join FitZone Gym today and start your fitness journey with
+              state-of-the-art equipment, expert trainers, and a supportive
+              community that's committed to your success.
+            </p>
+            <div class="hero-buttons">
+              <a href="#contact" class="btn btn-primary">
+                <span>Get Started Today</span>
+                <span class="btn-icon">→</span>
+              </a>
+              <a href="#about" class="btn btn-secondary">
+                <span>Learn More</span>
+              </a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-number">5000+</div>
+                <div class="stat-label">Active Members</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Expert Trainers</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Open Access</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="hero-image-wrapper">
+              <div class="hero-placeholder">
+                <div class="hero-gym-icon">💪</div>
+              </div>
+              <div class="hero-card hero-card-1">
+                <div class="card-icon">🏋️</div>
+                <div class="card-text">Strength Training</div>
+              </div>
+              <div class="hero-card hero-card-2">
+                <div class="card-icon">🏃</div>
+                <div class="card-text">Cardio Zone</div>
+              </div>
+              <div class="hero-card hero-card-3">
+                <div class="card-icon">🧘</div>
+                <div class="card-text">Yoga Classes</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

@@ -1,18 +1,36 @@
 // Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
+const hamburger = document.getElementById('hamburger');
 const navMenu = document.querySelector('.nav-menu');
+const navbar = document.getElementById('navbar');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+    });
+}
 
 // Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
+document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
+        if (hamburger) {
+            hamburger.classList.remove('active');
+        }
+        document.body.style.overflow = '';
     });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navMenu.classList.contains('active') && 
+        !navMenu.contains(e.target) && 
+        !hamburger.contains(e.target)) {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 });
 
 // Smooth Scrolling
@@ -32,15 +50,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Navbar scroll effect
 let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
-    } else {
-        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+    if (navbar) {
+        if (currentScroll > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     }
     
     lastScroll = currentScroll;
@@ -133,7 +152,7 @@ window.addEventListener('scroll', () => {
         }
     });
     
-    document.querySelectorAll('.nav-menu a').forEach(link => {
+    document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
